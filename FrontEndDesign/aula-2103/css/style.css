@@ -1,0 +1,32 @@
+body{
+    font-family: "Kanit", sans-serif;
+}
+
+h1 {
+    color: #1f6b61;
+    font-size: 45px;
+    font-family: "Boldonse", system-ui;
+}
+
+h2, h3, h4, h5, h6 {
+    font-family: "Boldonse", system-ui;
+}
+
+img {
+    width: 300px;
+    border-radius: 8px 80px 8px 80px;    
+}
+
+a {
+    color: #dc143c;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 800;
+    transition: .5s;
+
+} 
+
+a:hover {
+    color: blue;
+    text-decoration: underline;
+}
