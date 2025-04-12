@@ -1,0 +1,30 @@
+:root {
+    --color-blue: #002;
+    --color-light: #f4f4f4;
+}
+
+* {
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    color: var(--color-light);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    background-attachment: fixed;
+}
+
+.bg-blue {
+    background-color: var(--color-blue);
+}
+
+.bg-image-1 {
+    background-image: url(../vinicolas/pexels-tim-mossholder-2331884.jpg);
+}
+
+.bg-image-2 {
+    background-image: url(../vinicolas/pexels-kadir-15011079.jpg);
+}
