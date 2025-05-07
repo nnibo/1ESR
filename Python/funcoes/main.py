@@ -84,8 +84,27 @@ def exibir_informacoes(**informacoes):
 exibir_informacoes(nome = 'Ana', idade = 18, cidade = 'Sao Paulo\n')
 exibir_informacoes(produto = 'Notebook', preco = 2500.00, marca = 'Dell')
 '''
-
-
-
+# ------------------------------------------------------------------------------
+'''
+# Definindo uma expressão matemática em forma de string
+expressao = "2 + 3 * 5"
+# Usando eval para avaliar a expressão
+resultado = eval(expressao)
+# Exibindo o resultado
+print(resultado) # Saída: 17
+'''
+# ------------------------------------------------------------------------------
+'''
+# Definindo uma string com um laço for e uma condição if
+code_str = """
+result = []
+for i in range(10):
+if i % 2 == 0:
+result.append(i)
+print(result)
+"""
+# Usando eval para executar a string como código Python
+exec(code_str)
+'''
 
 
