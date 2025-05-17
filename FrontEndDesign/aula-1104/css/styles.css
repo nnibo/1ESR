@@ -13,6 +13,11 @@
  
 html {
     scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
 }
  
 ul, ol {
@@ -56,15 +61,21 @@ a:hover {
  
 .header-page {
     width: 100%;
-    height: 100px;
+    height: 10rem;
     display: flex;
     align-items: center; /* align items vertical */
     justify-content: space-between; /* justify content horizontal */
-    padding: 0 30px; /* padding aumenta o height e o width para espaçar
+    padding: 0 1.875rem; /* padding aumenta o height e o width para espaçar
     por isso usamos box sizing no reset */
+    /* font-size: 25px; */
+
+    & h1{
+        font-size: 3rem; /* multiplica o valor do pai por 2 */
+    }
    
 }
  
+
 .header-menu ul {
     display: flex;
     gap: 20px;
@@ -77,4 +88,28 @@ a:hover {
     align-items: center;
     justify-content: center;
     gap: 20px;
+
+    & h2{               /*menor tamanho */ /*tamanho ideal*/ /*maximo tamanho*/
+        font-size: clamp(24px, 4vw, 6rem);
+        & span {
+            color: var(--color-pink);
+        }
+    }
+    & p{
+        width: 60%;
+        text-align: center;
+        text-wrap: balance;
+    }
+}
+
+.btn {
+    background-color: var(--color-pink);
+    padding: .8rem 3rem;
+    border-radius: 8rem;
+    transition: .5s;
+
+    &:hover {
+        background-color: transparent;
+        border: 1px solid var(--color-light);
+    }
 }
