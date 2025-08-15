@@ -94,19 +94,73 @@
 # -------------------------------------------------------------------------
 
 # EX 2
-def criar_matriz_contra_diagonal(m, n):
+# def criar_matriz_contra_diagonal(m, n):
+#     matriz = []
+
+#     for i in range(m):
+#         linha = []
+
+#         for j in range(n):
+#             if i + j == m - 1:
+#                 linha.append(1)
+#             else:
+#                 linha.append(0)
+#         matriz.append(linha)
+#     return matriz
+
+# def print_matriz(matriz):
+#     for linha in matriz:
+#         print(linha)
+
+# print_matriz(criar_matriz_contra_diagonal(4,4))
+
+# -------------------------------------------------------------------------
+
+# EX 3
+# import random
+
+# def criar_matriz_numeros_aleatorios(m, n):
+#     matriz = []
+
+#     for i in range(m):
+#         linha = []
+
+#         for j in range(n):
+#             linha.append(random.randint(1, 200))
+#         matriz.append(linha)
+#     return matriz
+
+# def print_matriz(matriz):
+#     for linha in matriz:
+#         print(linha)
+
+# print_matriz(criar_matriz_numeros_aleatorios(4,4))
+
+# -------------------------------------------------------------------------
+
+# EX 4
+import random
+
+def soma_elementos_diagonal_principal(m, n):
     matriz = []
+
     for i in range(m):
         linha = []
 
         for j in range(n):
-            linha.append(0)
-        linha[j - i] = 1
-        matriz.append(linha)
-    return matriz
-matriz_diagonal = criar_matriz_contra_diagonal(5,5)
-print(matriz_diagonal)
+            linha.append(random.randint(1, 9))
 
+            soma_elementos = 0
+            if i == j:
+                soma_elementos += linha[j]
+        matriz.append(linha)
+    return matriz, soma_elementos
+  
+def print_matriz(matriz):
+    for linha in matriz:
+        print(linha)
+
+print_matriz(soma_elementos_diagonal_principal(4,4))
 # -------------------------------------------------------------------------
 
 # EX 15 DA LISTA DE REVISAO
