@@ -139,40 +139,44 @@
 # -------------------------------------------------------------------------
 
 # EX 4
-import random
+# import random
 
-def soma_elementos_diagonal_principal(m, n):
-    matriz = []
+# def soma_elementos_diagonal_principal(m, n):
+#     matriz = []
+#     soma_elementos = 0
+#     for i in range(m):
+#         linha = []
 
-    for i in range(m):
-        linha = []
+#         for j in range(n):
+#             linha.append(random.randint(1, 9))
 
-        for j in range(n):
-            linha.append(random.randint(1, 9))
-
-            soma_elementos = 0
-            if i == j:
-                soma_elementos += linha[j]
-        matriz.append(linha)
-    return matriz, soma_elementos
+#             if i == j:
+#                 soma_elementos += linha[j]
+#         matriz.append(linha)
+#     return matriz, soma_elementos
   
-def print_matriz(matriz):
-    for linha in matriz:
-        print(linha)
+# def print_matriz(matriz):
+#     for linha in matriz:
+#         print(linha)
 
-print_matriz(soma_elementos_diagonal_principal(4,4))
+# print_matriz(soma_elementos_diagonal_principal(4,4))
+
 # -------------------------------------------------------------------------
 
-# EX 15 DA LISTA DE REVISAO
-# texto = 'bom dia, boa tarde, boa noite, voce é boa'
-#
-# lista = texto.split()
-# ocorrencias = {}
-#
-# for palavra in lista:
-#     if palavra in ocorrencias:
-#         ocorrencias[palavra] += 1
-#     else:
-#         ocorrencias[palavra] = 1
-#
-# print(ocorrencias)
+# EX 5
+def criar_matriz_identidade(m, n):
+    matriz = []
+    for i in range(m):
+        linha = []
+        for j in range(n):
+            if i == j:
+                linha.append(m)
+            else:
+                linha.append(n)
+        matriz.append(linha)
+    return matriz
+
+print(criar_matriz_identidade(5,6))
+# -------------------------------------------------------------------------
+
+# EX 6

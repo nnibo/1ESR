@@ -67,48 +67,115 @@
 
 # ---------------------------------------------------------------------------------
 
-# Ex 3
-tarefas = [{
-    'titulo': str,
-    'prioridade': str,
-    'concluida': bool
-}]
+# EX 5
+# opcao = 1
+# alunos = []
+# while opcao != 0:
+#     opcao = int(input("Digite 1 para adicionar aluno, 2 para calcular media de algum aluno, 0 para sair: "))
 
+#     match opcao:
+#         case 1:
+#             nome = input("Digite o nome do aluno: ")
+#             nota1 = int(input("Digite a primeira nota: "))
+#             nota2 = int(input("Digite a segunda nota: "))
+#             nota3 = int(input("Digite a terceira nota: "))
+#             listaNotas = [nota1, nota2, nota3]
+#             alunos.append({"Nome": nome, "Notas": listaNotas})
+#             print("Aluno", nome, "Adicionado")
+#         case 2:
+#             nome = input("Digite o nome do aluno no qual quer verificar a media: ")
+#             for aluno in alunos:
+#                 if aluno["Nome"] == nome:
+#                     soma_notas = 0
+#                     for nota in listaNotas:
+#                         soma_notas += nota
+#                         media = soma_notas / len(listaNotas)
+#                     print("A média do aluno", nome, "é", media)
+#         case 0:
+#             print("Programa encerrando...")
+#             break
 
-# Ex 6
+# ---------------------------------------------------------------------------------
+
+# # EX 6
+# opcao = 1
+# contatos = []
+# while opcao != 0:
+#     opcao = int(input("""
+#     Digite uma opção:
+#     1 - Listar Contatos
+#     2 - Adicionar um Contato
+#     3 - Editar um contato
+#     4 - Apagar um contato
+#     0 - Sair
+#     """))
+
+#     match opcao:
+#         case 1:
+#             for contato in contatos:
+#                 print("Nome:",contato['Nome'])
+#                 print("Telefone:",contato['Telefone'])
+#         case 2:
+#             nome = input("Digite o nome: ")
+#             telefone = input("Digite o telefone: ")
+#             contatos.append({"Nome": nome, "Telefone": telefone})
+
+#         case 3:
+#             nome = input("Digite o nome: ")
+#             for contato in contatos:
+#                 if contato["Nome"] == nome:
+#                     telefone = input("Digite o telefone: ")
+#                     contato["Telefone"] = telefone
+#         case 4:
+#             nome = input("Digite o nome: ")
+#             for contato in contatos:
+#                 if contato["Nome"] == nome:
+#                     contatos.remove(contato)
+#         case 0:
+#             print("Finalizando o programa...")
+#             break
+
+# ---------------------------------------------------------------------------------
+
+# EX 7
+vendas = []
 opcao = 1
-contatos = []
 while opcao != 0:
-    opcao = int(input("""
-    Digite uma opção:
-    1 - Listar Contatos
-    2 - Adicionar um Contato
-    3 - Editar um contato
-    4 - Apagar um contato
-    0 - Sair
-    """))
+    opcao = int(input("Digite 1 para adicionar uma venda, 2 para ver as vendas de um produto especifico, 3 para ver as vendas gerais e 0 para sair: "))
 
     match opcao:
         case 1:
-            for contato in contatos:
-                print("Nome:",contato['Nome'])
-                print("Telefone:",contato['Telefone'])
+            produto = input("Digite o nome do produto: ")
+            quantidade = int(input("Digite quantos foram vendidos: "))
+            preco = float(input("Digite quanto custou: "))
+            vendas.append({"Produto": produto, "Quantidade": quantidade, "Preco": preco})
+            print("O produto ", produto, "foi adicionado as vendas")
         case 2:
-            nome = input("Digite o nome: ")
-            telefone = input("Digite o telefone: ")
-            contatos.append({"Nome": nome, "Telefone": telefone})
-
+            nome_produto = input("Digite o nome do produto que quer verificar")
+            venda_geral = 0
+            for produto in vendas:
+                if produto["Produto"] == nome_produto:
+                    venda_total_produto = produto["Quantidade"] * produto["Preco"]
+                    venda_geral += produto["Preco"]
+                    print("O produto", nome_produto, "teve R$" + venda_total_produto)
         case 3:
-            nome = input("Digite o nome: ")
-            for contato in contatos:
-                if contato["Nome"] == nome:
-                    telefone = input("Digite o telefone: ")
-                    contato["Telefone"] = telefone
-        case 4:
-            nome = input("Digite o nome: ")
-            for contato in contatos:
-                if contato["Nome"] == nome:
-                    contatos.remove(contato)
-        case 0:
-            print("Finalizando o programa...")
-            break
+            print("Foi vendido R$" + venda_geral)
+        
+
+
+
+# ---------------------------------------------------------------------------------
+
+# EX 15
+# texto = 'bom dia, boa tarde, boa noite, voce é boa'
+#
+# lista = texto.split()
+# ocorrencias = {}
+#
+# for palavra in lista:
+#     if palavra in ocorrencias:
+#         ocorrencias[palavra] += 1
+#     else:
+#         ocorrencias[palavra] = 1
+#
+# print(ocorrencias)
