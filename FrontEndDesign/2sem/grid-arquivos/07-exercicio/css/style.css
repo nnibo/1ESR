@@ -111,3 +111,30 @@ body {
     }
 
 }
+
+@media(width <= 650px){ /* RESPONSIVIDADE CELULAR */
+    .header {
+        grid-column: 1 / -1;
+    }
+
+    .menu {
+        grid-column: 1 / 2;   /* primeira coluna da esquerda */
+        grid-row: 2 / -1;     /* começa abaixo do header (linha 2) e vai até o fim (-1 = última linha) */
+        background: firebrick;
+    }
+
+   .main {
+        grid-column: 2 / -1;
+    }
+
+    .banner {
+        grid-column: 2 / -1;
+        grid-row: 8 / 9;
+    }
+
+    .extra {
+        grid-column: 2 / 4;
+        grid-row: 9 / 10;
+    }
+
+}
