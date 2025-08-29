@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --first-color: #779b63;
+    --second-color: #d62828;
+    --third-color: #f77f00;
+    --fourth-color: #291e8b;
+    --fifth-color: #008b8b;
+    --sixth-color: #ff1493;
+    --seventh-color: #a52a2a; 
+    --bg-dark: #333;
+    --bg-white: #fff;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--bg-dark);
+    padding: 1rem;
+    font-family: calibri;
+    font-size: 1.6rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+
+    /* DA PRA FAZER DESSE JEITO TBM
+       SO COLOCAR OS NOMES DAS AREAS NAS CLASSES
+    */
+    /* grid-template-areas: 
+        'header menu menu menu'
+        'hero hero hero hero'
+        'main main . image'
+        'main main . extra'
+        'banner banner banner banner'
+    ; */
+
+}
+
+.header {
+    background-color: var(--first-color);
+    height: 8vh; 
+}
+
+.menu {
+    background-color: var(--second-color);
+    grid-column: span 3;
+}
+
+.hero {
+    background-color: var(--third-color);
+    grid-column: 1 / -1;
+    height: 50vh;
+}
+
+.main {
+    background-color: var(--fourth-color);
+    grid-column: span 2;
+    grid-row: span 2;
+    height: 30vh;
+}
+
+.image {
+    background-color: var(--seventh-color); 
+    grid-column: 4 / -1;
+}
+
+.extra {
+    background-color: var(--sixth-color); 
+    grid-column: 4 / -1;
+}
+
+.banner {
+    background-color: var(--fifth-color); 
+    grid-column: 1 / -1;
+    height: 7vh;
+}
+
+
+@media(width <= 1024px){
+    .header {
+        grid-column: 1 / -1;
+    }
+
+    .menu {
+        grid-column: 1 / 2;   /* primeira coluna da esquerda */
+        grid-row: 2 / -1;     /* começa abaixo do header (linha 2) e vai até o fim (-1 = última linha) */
+        background: firebrick;
+    }
+
+   .main {
+        grid-column: 2 / -1;
+    }
+
+    .banner {
+        grid-column: 2 / -1;
+        grid-row: 8 / 9;
+    }
+
+    .extra {
+        grid-column: 2 / 4;
+        grid-row: 9 / 10;
+    }
+
+}
