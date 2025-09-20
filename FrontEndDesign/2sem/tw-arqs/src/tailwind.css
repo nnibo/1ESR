@@ -1,1 +1,20 @@
 @import "tailwindcss";
+
+@theme {
+    --animate-titulo: title 2s ease-in-out
+}
+
+@keyframes title {
+
+    0% {
+        transform: translateX(-1000px);
+    }
+
+    50%{
+        transform: translateX(1000px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+    
+}
