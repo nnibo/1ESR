@@ -1,18 +1,56 @@
-"use client";
-import { useParams, useRouter, useSearchParams } from 'next/navigation';
+"use client"
 
+import { useParams, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 const ContactDetailPage = () => {
   const params = useParams();
   const router = useRouter();
-  const searchParams = useSearchParams();
+  const [contact, setContact] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  // Recebe os dados do contato via query parameters
-  const contact = {
-    id: parseInt(params.id),
-    nome: searchParams.get('nome'),
-    email: searchParams.get('email'),
-    telefone: searchParams.get('telefone')
-  };
+  useEffect(() => {
+    // Buscar contatos do localStorage
+    const savedContacts = localStorage.getItem('contacts');
+    if (savedContacts) {
+      const contacts = JSON.parse(savedContacts);
+      const foundContact = contacts.find(c => c.id === parseInt(params.id));
+      
+      if (foundContact) {
+        setContact(foundContact);
+      } else {
+        // Contato não encontrado
+        router.push('/');
+      }
+    } else {
+      // Não há contatos salvos
+      router.push('/');
+    }
+    setLoading(false);
+  }, [params.id, router]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-50 p-6">
+        <div className="max-w-2xl mx-auto">
+          <div className="bg-white shadow rounded-lg p-6">
+            <p className="text-gray-600">Carregando...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (!contact) {
+    return (
+      <div className="min-h-screen bg-gray-50 p-6">
+        <div className="max-w-2xl mx-auto">
+          <div className="bg-white shadow rounded-lg p-6">
+            <p className="text-gray-600">Contato não encontrado</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-50 p-6">
@@ -33,12 +71,12 @@ const ContactDetailPage = () => {
               <label className="block text-sm font-medium text-gray-700 mb-1">Nome</label>
               <p className="text-gray-900">{contact.nome}</p>
             </div>
-
+            
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
               <p className="text-gray-900">{contact.email}</p>
             </div>
-
+            
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Telefone</label>
               <p className="text-gray-900">{contact.telefone}</p>
