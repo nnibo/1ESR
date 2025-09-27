@@ -1,7 +1,11 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css");
+
 @import "tailwindcss";
 
 @theme {
-    --animate-titulo: title 2s ease-in-out
+    --animate-titulo: title 2s ease-in-out;
+    --color-azul: #336699;
+    --spacing-maior: 500px
 }
 
 @keyframes title {
